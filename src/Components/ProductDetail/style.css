@@ -1,0 +1,6 @@
+.product-detail{
+    width: 200px;  
+    height:calc(100vh - 68px);
+    top:68px  
+}
+/* height:calc(100vh - 68px); top:68px es para que el componete se situo justo por debajo del navbar y ocupe toda la pantalla  */ 
