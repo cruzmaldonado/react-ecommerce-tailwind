@@ -13,6 +13,7 @@ function Home() {
    
     
   }, [])
+  console.log(items)
 
   return (
     <Layout>
