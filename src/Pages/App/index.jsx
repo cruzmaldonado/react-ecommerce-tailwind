@@ -1,6 +1,7 @@
 import { useRoutes, BrowserRouter } from "react-router-dom"
 import {ShoppingCartProvider} from "../../Context"
 
+import CheckoutSiteMenu from "../../Components/CheckoutSiteMenu"
 import Home from "../Home"
 import MyAccount from "../MyAccount"
 import MyOrder from "../MyOrder"
@@ -31,6 +32,7 @@ const App= () => {
     <BrowserRouter>
       <AppRoutes/>
       <Navbar/>
+      <CheckoutSiteMenu/>
     </BrowserRouter>
     </ShoppingCartProvider>
   )

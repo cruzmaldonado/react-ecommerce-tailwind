@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import Layout from "../../Components/Layout"
-import Card from "../../Components/Card"
+import Cart from "../../Components/Cart"
 import ProductDetail from "../../Components/ProductDetail"
 
 function Home() {
@@ -23,7 +23,7 @@ function Home() {
 
       {
         items?.map(item=>(
-          <Card key ={item.id} item={item}/>
+          <Cart key ={item.id} item={item}/>
           
           )
           )
