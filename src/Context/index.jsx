@@ -34,6 +34,10 @@ export const ShoppingCartProvider =({children})=>{
 
       //? Este es un array de objeto que es el detallado de todos los productos que se agregan al carrito para la compra.
       const [cartProducts, setCartProducts] = useState([])
+
+      //? Shopping Cart - Order
+      const [order, setOrder] = useState([])
+
     
     return(
         
@@ -45,6 +49,7 @@ export const ShoppingCartProvider =({children})=>{
             openCheckoutSideMenu,closeCheckoutSideMenu,isCheckoutSideMenu,
             productToShow,setProductToShow,
             cartProducts, setCartProducts,
+            order, setOrder,
         }}>
             {children}
         </ShoppingCartContext.Provider>

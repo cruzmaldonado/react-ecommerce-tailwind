@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import {Link} from 'react-router-dom'
 import { XMarkIcon } from '@heroicons/react/24/solid'
 import { ShoppingCartContext } from '../../Context'
 import OrderCart from '../../Components/OrderCart'
@@ -14,15 +15,29 @@ const CheckoutSiteMenu=()=>{
 
 
     const context = useContext(ShoppingCartContext)
-    console.log(context.cartProducts)
-
+    
     //* esta funcion es para poder borrar elementos de nuestro carrito de compra , al presionar la x.
     const handleDelete =(id)=>{
         const filteredProducts = context.cartProducts.filter(product=> product.id !==id)
         context.setCartProducts(filteredProducts)
-    }
-   
 
+
+    }
+    const handleCheckout = () => {
+        const orderToAdd = {
+            date: '01.02.23',
+            products: context.cartProducts,
+            totalProducts: context.cartProducts.length,
+            totalPrice: totalPrice(context.cartProducts)
+          }
+        context.setOrder([...context.order,orderToAdd])
+        context.setCartProducts([])
+    }
+    const closeSideMenu =()=>{
+        context.closeCheckoutSideMenu()
+        context.setCartProducts([])
+        context.setCount(0)
+    }
     
     return(
         <aside
@@ -35,8 +50,9 @@ const CheckoutSiteMenu=()=>{
                 </div>
            
             </div>
-           
-            <div className='px-4 overflow-y-scroll'>
+            
+           {/* flex 1 nos permite colocar el bottom hasta el final del componente es decir ocupa todo ese espacio que tenga disponible */}
+            <div className='px-4 overflow-y-scroll flex-1'>
             {
                 
                 
@@ -55,12 +71,17 @@ const CheckoutSiteMenu=()=>{
                 }
             </div>
 
-            <div className='px-4'>
-        <p className='flex justify-between items-center'>
+            <div className='px-4 mb-4'>
+        <p className='flex justify-between items-center mb-2'>
           <span className='font-light'>Total:</span>
           <span className='font-medium text-2xl'>${totalPrice(context.cartProducts)}</span>
         </p>
+        <Link to='/my-orders/last'>
+        
+        <button className='bg-black py-3 w-full text-white rounded-lg ' onClick={()=>handleCheckout()}>Checkout</button>
+        </Link>
       </div>
+
 
 
           
