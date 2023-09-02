@@ -16,11 +16,7 @@ const OrderCart =props =>{
 
     
     
-    const deleteProduct =(id)=>{
-        handleDelete (id)
-        context.setCount(context.count-1)
-        
-    }
+   
 
 return(
     <div className="flex justify-between items-center mb-3">

@@ -22,7 +22,7 @@ const Cart =({item})=>{
         //! se esta creando un doble evento dandole click al icono '+', para evitar eso entramos al evento 
         //! del componente hijo y evitamos la propagacion con event.stopPropagation() 
         event.stopPropagation()
-            context.setCount(context.count+1)
+            
             context.setCartProducts([...context.cartProducts, item])
             context.openCheckoutSideMenu()
             context.closeProductDetail()

@@ -32,12 +32,12 @@ const CheckoutSiteMenu=()=>{
           }
         context.setOrder([...context.order,orderToAdd])
         context.setCartProducts([])
+        context.setSearchByTitle(null)
+    
+
+        
     }
-    const closeSideMenu =()=>{
-        context.closeCheckoutSideMenu()
-        context.setCartProducts([])
-        context.setCount(0)
-    }
+    
     
     return(
         <aside
@@ -45,7 +45,7 @@ const CheckoutSiteMenu=()=>{
             <div className='flex justify-between items-center px-3 pt-2 mb-2'>
                 <h2 className='font-medium text-xl'>My order:</h2>
                 <div>
-                    <XMarkIcon onClick={()=>context.closeCheckoutSideMenu()} className="h-6 w-6 text-black cursor-pointer" />
+                    <XMarkIcon onClick={()=>context.closeCheckoutSideMenu()} className="h-6 w-6 text-black  cursor-pointer" />
 
                 </div>
            
