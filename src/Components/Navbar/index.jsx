@@ -90,7 +90,7 @@ const Navbar = () => {
 
             <ul className="flex items-center gap-3">
                 <li className="text-black/60 cursor-pointer">
-                    andressmaldonado1@gmail.com
+                    cruzmaldonadocharris@gmail.com
                 </li>
 
                 <li>
